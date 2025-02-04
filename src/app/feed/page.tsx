@@ -7,20 +7,22 @@ export default function FeedPage() {
         <div className="bg-white h-screen">
             <HeaderDeslogado />
             <section className="bg-white text-center py-16 px-6">
-                <div className="max-w-3xl mx-auto">
-                    <h1 className="text-5xl font-bold mb-4 text-[#E02222]">
+                <div className="mx-auto">
+                    <h1 className="text-5xl font-bold my-10 text-[#E02222]">
                         Economize tempo e dinheiro
                     </h1>
                     <p className="text-2xl font-semibold text-black">
                         Agilidade. Objetividade. Eficácia.
                     </p>
                 </div>
-                <img src="/ImagemBanner.png" alt="Imagem frutas" className="w-full h-[500px] object-cover mt-10" />
+                <div className="bg-green-500 min-w-fit min-h-fit mt-10">
+                    <Image src="/ImagemBanner.png" alt="Imagem frutas" width={1920} height={500} className="w-full h-[500px] object-cover mt-10" />
+                </div>
             </section>
             <section className="bg-white py-16 px-6">
                 <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
                     <div>
-                    <img src="/ImagemLoc.png" alt="Localização" className="w-[240px] h-[200px] rounded-lg shadow-lg ml-[202px]" />
+                    <Image src="/ImagemLoc.png" alt="Localização" width={240} height={200} className="rounded-lg shadow-lg ml-[202px]" />
                     </div>
                     <div className="w-full md:w-1/2 text-center md:text-left flex flex-col items-center justify-center">
                         <h2 className="text-4xl font-bold text-[#E02222] mb-4">

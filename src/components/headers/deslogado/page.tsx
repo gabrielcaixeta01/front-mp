@@ -24,24 +24,24 @@ export default function HeaderDeslogado() {
         </button>
 
         {/* Barra de Pesquisa */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1">
           <input
             type="text"
             placeholder="Pesquise seu produto aqui..."
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)} // Atualiza o estado com o texto digitado
-            className="w-[900px] h-[50px] px-4 py-2 rounded-[30px] border border-[#150606] text-black focus:outline-none focus:ring-2 focus:ring-red-600"
+            onChange={(e) => setSearchText(e.target.value)}
+            className="w-[900px] h-[48px] px-4 py-2 rounded-l-[30px] rounded-r-lg border border-[#150606] text-black focus:outline-none focus:border-red-600 transition duration-300"
           />
           <button
             onClick={handleSearch}
-            className="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-2 rounded-[30px] transition duration-300"
+            className="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-l-lg rounded-r-[30px] transition duration-300"
           >
             Buscar
           </button>
         </div>
 
         <Link href={"/role-selection"}>
-          <button className="bg-gray-200 hover:bg-red-600 text-black text-sm hover:text-white py-2 px-5 rounded-md transition duration-500 hover:shadow-lg">
+          <button className="bg-gray-200 hover:bg-red-600 text-black text-sm hover:text-white py-3 px-5 rounded-md transition duration-500 hover:shadow-lg">
             Login ou Cadastro
           </button>
         </Link>
