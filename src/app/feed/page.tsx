@@ -1,5 +1,6 @@
 "use client";
 import HeaderDeslogado from "@/components/headers/deslogado/page";
+import ProductCard from "@/components/ProductCard/page";
 import Image from "next/image";
 
 export default function FeedPage() {
@@ -39,76 +40,17 @@ export default function FeedPage() {
                 </div>
             </section>
 
-
-            <section className="py-10 my-10 border-t border-b border-gray-300">
-                {/* Título */}
-                <div className="text-center ">
+            <section className="py-10 border-t border-b border-gray-300">
+                <div className="text-center">
                     <h1 className="text-black text-2xl font-bold">Produtos Mais Pesquisados</h1>
                 </div>
 
-                {/* Grid de Produtos */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4 px-10 mt-10">
-                    
-                    {/* Produto: Coco Geladinho */}
-                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
-                        <div className="relative w-[200px] h-[200px]">
-                            <Image 
-                            src="/coco.png" 
-                            alt="Coco geladinho" 
-                            width={200} 
-                            height={200} 
-                            objectFit="cover"
-                            className="rounded-md"
-                            />
-                        </div>
-                    <h2 className="text-lg text-black font-semibold mt-6">Coco Geladinho</h2>
-                    </div>
-
-                    {/* Produto: Suquinho de Laranja */}
-                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
-                    <div className="relative w-[200px] h-[200px]">
-                        <Image 
-                        src="/suco.png" 
-                        alt="Suquinho de Laranja" 
-                        width={200} 
-                        height={200} 
-                        objectFit="cover"
-                        className="rounded-md"
-                        />
-                    </div>
-                    <h2 className="text-lg text-black font-semibold mt-6">Suquinho de Laranja</h2>
-                    </div>
-
-                    {/* Produto: Picanha do Lula */}
-                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
-                        <div className="relative w-[200px] h-[200px]">
-                            <Image 
-                            src="/carne.png" 
-                            alt="Picanha do Lula" 
-                            width={200} 
-                            height={200} 
-                            objectFit="cover"
-                            className="rounded-md"
-                            />
-                        </div>
-                    <h2 className="text-lg text-black font-semibold mt-6">Picanha do Lula</h2>
-                    </div>
-
-                    {/* Produto: Leitinho de Égua */}
-                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
-                    <div className="relative w-[200px] h-[200px]">
-                        <Image 
-                        src="/leite.png" 
-                        alt="Leitinho de Égua" 
-                        width={200} 
-                        height={200} 
-                        objectFit="cover"
-                        className="rounded-md"
-                        />
-                    </div>
-                    <h2 className="text-lg text-black font-semibold mt-6">Leitinho de Égua</h2>
-                    </div>
-
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-10 mt-10">
+                    <ProductCard imageSrc="/coco.png" altText="Coco Geladinho" productName="Coco Geladinho" />
+                    <ProductCard imageSrc="/suco.png" altText="Suquinho de Laranja" productName="Suquinho de Laranja" />
+                    <ProductCard imageSrc="/carne.png" altText="Picanha do Lula" productName="Picanha do Lula" />
+                    <ProductCard imageSrc="/leite.png" altText="Leitinho de Égua" productName="Leitinho de Égua" />
+                    <ProductCard imageSrc="/morango.png" altText="Morango" productName="Moranguinho" />
                 </div>
             </section>
             <section className="py-10 my-10">
