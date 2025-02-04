@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export default function FeedPage() {
     return (
-        <div className="bg-white h-screen">
+        <div className="bg-white h-screen min-h-fit">
             <HeaderDeslogado />
-            <section className="bg-white text-center py-16 px-6">
-                <div className="mx-auto">
-                    <h1 className="text-5xl font-bold my-10 text-[#E02222]">
+            <section className="w-full text-center py-18">
+                <div className="itens-center text-center py-12">
+                    <h1 className="text-5xl font-bold my-5 text-[#E02222]">
                         Economize tempo e dinheiro
                     </h1>
                     <p className="text-2xl font-semibold text-black">
@@ -19,7 +19,7 @@ export default function FeedPage() {
                     <Image src="/ImagemBanner.png" alt="Imagem frutas" width={1920} height={500} className="w-full h-[500px] object-cover mt-10" />
                 </div>
             </section>
-            <section className="bg-white py-16 px-6">
+            <section className="py-20 px-6">
                 <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
                     <div>
                     <Image src="/ImagemLoc.png" alt="Localização" width={240} height={200} className="rounded-lg shadow-lg ml-[202px]" />
@@ -37,6 +37,85 @@ export default function FeedPage() {
                         </button>
                     </div>
                 </div>
+            </section>
+
+
+            <section className="py-10 my-10 border-t border-b border-gray-300">
+                {/* Título */}
+                <div className="text-center ">
+                    <h1 className="text-black text-2xl font-bold">Produtos Mais Pesquisados</h1>
+                </div>
+
+                {/* Grid de Produtos */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4 px-10 mt-10">
+                    
+                    {/* Produto: Coco Geladinho */}
+                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
+                        <div className="relative w-[200px] h-[200px]">
+                            <Image 
+                            src="/coco.png" 
+                            alt="Coco geladinho" 
+                            width={200} 
+                            height={200} 
+                            objectFit="cover"
+                            className="rounded-md"
+                            />
+                        </div>
+                    <h2 className="text-lg text-black font-semibold mt-6">Coco Geladinho</h2>
+                    </div>
+
+                    {/* Produto: Suquinho de Laranja */}
+                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
+                    <div className="relative w-[200px] h-[200px]">
+                        <Image 
+                        src="/suco.png" 
+                        alt="Suquinho de Laranja" 
+                        width={200} 
+                        height={200} 
+                        objectFit="cover"
+                        className="rounded-md"
+                        />
+                    </div>
+                    <h2 className="text-lg text-black font-semibold mt-6">Suquinho de Laranja</h2>
+                    </div>
+
+                    {/* Produto: Picanha do Lula */}
+                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
+                        <div className="relative w-[200px] h-[200px]">
+                            <Image 
+                            src="/carne.png" 
+                            alt="Picanha do Lula" 
+                            width={200} 
+                            height={200} 
+                            objectFit="cover"
+                            className="rounded-md"
+                            />
+                        </div>
+                    <h2 className="text-lg text-black font-semibold mt-6">Picanha do Lula</h2>
+                    </div>
+
+                    {/* Produto: Leitinho de Égua */}
+                    <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition flex flex-col items-center bg-gray-100">
+                    <div className="relative w-[200px] h-[200px]">
+                        <Image 
+                        src="/leite.png" 
+                        alt="Leitinho de Égua" 
+                        width={200} 
+                        height={200} 
+                        objectFit="cover"
+                        className="rounded-md"
+                        />
+                    </div>
+                    <h2 className="text-lg text-black font-semibold mt-6">Leitinho de Égua</h2>
+                    </div>
+
+                </div>
+            </section>
+            <section className="py-10 my-10">
+                <div className="text-center ">
+                    <h1 className="text-black text-2xl font-bold">Lojas Parceiras</h1>
+                </div>
+
             </section>
         </div>
 
