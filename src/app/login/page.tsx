@@ -36,7 +36,7 @@ export default function Login() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
                     />
                     <input
                         type="password"
@@ -44,7 +44,7 @@ export default function Login() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
                     />
                     <button type="submit" className="w-full px-6 py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition">
                         Logar

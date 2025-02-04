@@ -20,7 +20,7 @@ export default function Register() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <div className="w-full max-w-sm bg-gray-300 rounded-2xl p-6 shadow-lg text-center relative">
+            <div className="w-full max-w-lg bg-gray-300 rounded-2xl p-8 shadow-lg text-center relative">
                 <button onClick={() => router.back()} className="absolute top-4 left-4 bg-black text-white px-4 py-2 rounded-full text-sm">
                     Voltar
                 </button>
@@ -37,7 +37,7 @@ export default function Register() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
                     />
                     <input
                         type="text"
@@ -45,7 +45,7 @@ export default function Register() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
                     />
                     <input
                         type="password"
@@ -53,7 +53,7 @@ export default function Register() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
                     />
                     <button type="submit" className="w-full px-6 py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition">
                         Criar conta
