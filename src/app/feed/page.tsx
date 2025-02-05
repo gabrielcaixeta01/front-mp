@@ -2,8 +2,16 @@
 import HeaderDeslogado from "@/components/headers/deslogado/page";
 import ProductCard from "@/components/ProductCard/page";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // Importando useRouter
 
 export default function FeedPage() {
+    const router = useRouter(); // Inicializando o roteador
+
+    // Função para redirecionar para a página de localização
+    const handleNavigateToLocation = () => {
+        router.push("/localizacao"); // Redireciona para a página de localização
+    };
+
     return (
         <div className="bg-white h-screen min-h-fit">
             <HeaderDeslogado />
@@ -23,7 +31,7 @@ export default function FeedPage() {
             <section className="py-20 px-6">
                 <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
                     <div>
-                    <Image src="/ImagemLoc.png" alt="Localização" width={240} height={200} className="rounded-lg shadow-lg ml-[202px]" />
+                        <Image src="/ImagemLoc.png" alt="Localização" width={240} height={200} className="rounded-lg shadow-lg ml-[202px]" />
                     </div>
                     <div className="w-full md:w-1/2 text-center md:text-left flex flex-col items-center justify-center">
                         <h2 className="text-4xl font-bold text-[#E02222] mb-4">
@@ -33,7 +41,11 @@ export default function FeedPage() {
                             Compartilhe sua localização para que possamos recomendar as melhores lojas da nossa feira para você comprar
                         </p>
 
-                        <button className="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300">
+                        {/* Botão funcional */}
+                        <button
+                            onClick={handleNavigateToLocation}
+                            className="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300"
+                        >
                             Informe sua Localização
                         </button>
                     </div>
@@ -57,9 +69,7 @@ export default function FeedPage() {
                 <div className="text-center ">
                     <h1 className="text-black text-2xl font-bold">Lojas Parceiras</h1>
                 </div>
-
             </section>
         </div>
-
     );
 }
