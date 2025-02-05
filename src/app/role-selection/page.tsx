@@ -18,7 +18,7 @@ export default function RoleSelection() {
 
     return (
         <div className="flex items-center w-full justify-center min-h-screen bg-white p-4">
-            <div className="w-full max-w-[20%] min-h-fit bg-gray-200 py-10 rounded-2xl shadow-lg text-center relative">
+            <div className="w-full max-w-sm min-h-fit bg-gray-200 py-10 rounded-2xl shadow-lg text-center relative">
                 <div>
                     <button 
                     onClick={() => router.push("/feed")} 
