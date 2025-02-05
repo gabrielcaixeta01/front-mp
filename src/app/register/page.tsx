@@ -19,25 +19,25 @@ export default function Register() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <div className="w-full max-w-lg bg-gray-300 rounded-2xl p-8 shadow-lg text-center relative">
-                <button onClick={() => router.back()} className="absolute top-4 left-4 bg-black text-white px-4 py-2 rounded-full text-sm">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
+            <div className="w-full max-w-lg bg-red-500 rounded-2xl p-8 shadow-md text-center relative">
+                <button onClick={() => router.back()} className="absolute top-4 shadow-md left-4 bg-white hover:bg-gray-200 text-black transition duration-500 px-4 py-2 rounded-full text-sm">
                     Voltar
                 </button>
-                <button onClick={() => router.push("/login")} className="absolute top-4 right-4 bg-black text-white px-4 py-2 rounded-full text-sm">
+                <button onClick={() => router.push("/login")} className="absolute top-4 shadow-md right-4 bg-white hover:bg-gray-200  text-black transition duration-500 px-4 py-2 rounded-full text-sm">
                     Já tenho conta
                 </button>
-                <h1 className="text-2xl font-bold mb-2 text-red-600">Crie sua conta</h1>
-                <p className="text-lg font-semibold text-gray-800 mb-2 uppercase">Criando conta como {role}</p>
-                <p className="text-sm text-gray-700 mb-6">Adicione as suas informações</p>
-                <form onSubmit={handleRegister} className="space-y-4">
+                <h1 className="text-3xl font-bold mt-16 text-white">Crie sua conta</h1>
+                <p className=" text-black text-sm mb-2">Criando conta como {role}</p>
+
+                <form onSubmit={handleRegister} className="space-y-4 px-4 py-8">
                     <input
                         type="email"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 text-black border-b-2 border-gray-100 rounded-[12px] focus:outline-none focus:border-black transition duration-300"
                     />
                     <input
                         type="text"
@@ -45,7 +45,7 @@ export default function Register() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 text-black border-b-2 border-gray-300 rounded-[12px] focus:outline-none focus:border-black transition duration-300"
                     />
                     <input
                         type="password"
@@ -53,9 +53,9 @@ export default function Register() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 text-black border-red-500 rounded-lg focus:outline-none"
+                        className="w-full px-4 py-3 text-black border-b-2 border-gray-300 rounded-[12px] focus:outline-none focus:border-black transition duration-300"
                     />
-                    <button type="submit" className="w-full px-6 py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition">
+                    <button type="submit" className="w-fit px-6 py-3 shadow-md bg-white hover:bg-gray-200 text-red-500 rounded-[12px] transition duration-500">
                         Criar conta
                     </button>
                 </form>
