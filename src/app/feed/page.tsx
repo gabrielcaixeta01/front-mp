@@ -2,14 +2,13 @@
 import HeaderDeslogado from "@/components/headers/deslogado/page";
 import ProductCard from "@/components/ProductCard/page";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; // Importando useRouter
+import { useRouter } from "next/navigation"; 
 
 export default function FeedPage() {
-    const router = useRouter(); // Inicializando o roteador
+    const router = useRouter(); 
 
-    // Função para redirecionar para a página de localização
     const handleNavigateToLocation = () => {
-        router.push("/localizacao"); // Redireciona para a página de localização
+        router.push("/localizacao"); 
     };
 
     return (
@@ -41,7 +40,6 @@ export default function FeedPage() {
                             Compartilhe sua localização para que possamos recomendar as melhores lojas da nossa feira para você comprar
                         </p>
 
-                        {/* Botão funcional */}
                         <button
                             onClick={handleNavigateToLocation}
                             className="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300"
