@@ -4,11 +4,14 @@ import HeaderDeslogado from "@/components/headers/deslogado/page";
 import ProductCard from "@/components/ProductCard/page";
 import Footer from "@/components/Footer/page";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; 
+import { useRouter, useSearchParams } from "next/navigation";
 import StoreCard from "@/components/StoreCard/page";
 
 export default function FeedPage() {
     const router = useRouter(); 
+    const searchParams = useSearchParams();
+    const query = searchParams.get("query") || "";
+
 
     const handleNavigateToLocation = () => {
         router.push("/localizacao"); 
@@ -17,6 +20,14 @@ export default function FeedPage() {
     const handleStoreClick = (storeName: string) => {
         router.push(`/stores/${storeName.toLowerCase().replace(/\s+/g, "-")}`);
     };
+
+    const filteredProducts = [
+        { image: "/coco.png", alt: "Coco Geladinho", name: "Coco Geladinho" },
+        { image: "/suco.png", alt: "Suquinho de Laranja", name: "Suquinho de Laranja" },
+        { image: "/carne.png", alt: "Picanha do Lula", name: "Picanha do Lula" },
+        { image: "/leite.png", alt: "Leitinho de Égua", name: "Leitinho de Égua" },
+        { image: "/morango.png", alt: "Morango", name: "Moranguinho" },
+    ].filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
 
     return (
         <div className="bg-white h-screen min-h-fit">
@@ -57,14 +68,16 @@ export default function FeedPage() {
             </section>
             <section className="py-10 border-t border-b border-gray-300">
                 <div className="text-center">
-                    <h1 className="text-black text-2xl font-bold">Produtos Mais Pesquisados</h1>
+                    <h1 className="text-black text-2xl font-bold">{query ? `Resultados para "${query}"` : "Produtos Mais Pesquisados"}</h1>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-10 mt-10">
-                    <ProductCard imageSrc="/coco.png" altText="Coco Geladinho" productName="Coco Geladinho" />
-                    <ProductCard imageSrc="/suco.png" altText="Suquinho de Laranja" productName="Suquinho de Laranja" />
-                    <ProductCard imageSrc="/carne.png" altText="Picanha do Lula" productName="Picanha do Lula" />
-                    <ProductCard imageSrc="/leite.png" altText="Leitinho de Égua" productName="Leitinho de Égua" />
-                    <ProductCard imageSrc="/morango.png" altText="Morango" productName="Moranguinho" />
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product, index) => (
+                            <ProductCard key={index} imageSrc={product.image} altText={product.alt} productName={product.name} />
+                        ))
+                    ) : (
+                        <p className="text-center text-lg text-gray-600">Nenhum produto encontrado.</p>
+                    )}
                 </div>
             </section>
             <section className="py-10 my-10">

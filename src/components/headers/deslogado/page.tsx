@@ -2,15 +2,18 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { useRole } from "@/app/context/RoleContext";
+import { useRouter } from "next/navigation";
 
 export default function HeaderDeslogado() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { role } = useRole();
-  const [searchText, setSearchText] = useState(""); // Estado para capturar texto da barra de pesquisa
+  const [searchText, setSearchText] = useState("");
+  const router = useRouter();
 
   const handleSearch = () => {
-    console.log("Pesquisando por:", searchText);
-    // Lógica adicional pode ser implementada aqui
+    if (searchText.trim()) {
+      router.push(`/search?query=${encodeURIComponent(searchText)}`);
+    }
   };
 
   return (
@@ -24,15 +27,10 @@ export default function HeaderDeslogado() {
             <Menu size={35} />
           </button>
           <div>
-            <p className="text-2xl font-bold text-red-600">
-              PinApp
-            </p>
-            
+            <p className="text-2xl font-bold text-red-600">PinApp</p>
           </div>
         </div>
 
-
-        {/* Barra de Pesquisa */}
         <div className="flex items-center space-x-1">
           <input
             type="text"
@@ -56,7 +54,6 @@ export default function HeaderDeslogado() {
         </Link>
       </div>
 
-      {/* Menu Lateral */}
       <div
         className={`fixed left-0 top-0 h-full w-64 bg-red-600 shadow-lg p-4 z-50 transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
