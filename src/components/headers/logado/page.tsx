@@ -19,6 +19,12 @@ export default function HeaderLogado() {
             <Link href={role === "vendedor" ? "/vendedor" : "/cliente"}>
                 <User size={24} className="text-black hover:text-red-600 transition duration-300" />
             </Link>
+
+            <div>
+                <p className="text-2xl font-bold text-red-600">
+                    PinApp
+                </p>
+            </div>
         </div>
         
         {/* Menu Lateral */}

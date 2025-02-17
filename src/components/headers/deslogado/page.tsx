@@ -16,12 +16,21 @@ export default function HeaderDeslogado() {
   return (
     <header className="w-full bg-white border-b-4 border-red-600 py-3 shadow-md relative z-50">
       <div className="flex justify-between items-center px-6">
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-black hover:text-red-600 transition duration-300"
-        >
-          <Menu size={35} />
-        </button>
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-black hover:text-red-600 transition duration-300"
+          >
+            <Menu size={35} />
+          </button>
+          <div>
+            <p className="text-2xl font-bold text-red-600">
+              PinApp
+            </p>
+            
+          </div>
+        </div>
+
 
         {/* Barra de Pesquisa */}
         <div className="flex items-center space-x-1">
