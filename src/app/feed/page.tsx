@@ -1,6 +1,8 @@
 "use client";
 import HeaderDeslogado from "@/components/headers/deslogado/page";
 import ProductCard from "@/components/ProductCard/page";
+import PartnerStore from "@/components/PartnerStore/page";
+import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; 
 
@@ -67,7 +69,14 @@ export default function FeedPage() {
                 <div className="text-center ">
                     <h1 className="text-black text-2xl font-bold">Lojas Parceiras</h1>
                 </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-10 mt-10">
+                    <PartnerStore imageSrc="/loja1.png" altText="Loja 1" storeName="Loja 1" />
+                    <PartnerStore imageSrc="/loja2.png" altText="Loja 2" storeName="Loja 2" />
+                    <PartnerStore imageSrc="/loja3.png" altText="Loja 3" storeName="Loja 3" />
+                    <PartnerStore imageSrc="/loja4.png" altText="Loja 4" storeName="Loja 4" />
+                </div>
             </section>
+            <Footer />
         </div>
     );
 }
