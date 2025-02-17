@@ -63,7 +63,7 @@ export default function HeaderDeslogado() {
           <Link href="/" className="text-white hover:text-gray-300">
             Produtos comprados
           </Link>
-          <Link href="/about" className="text-white hover:text-gray-300">
+          <Link href="/lojas" className="text-white hover:text-gray-300">
             Lojas parceiras
           </Link>
           <Link href="/localizacao" className="text-white hover:text-gray-300">

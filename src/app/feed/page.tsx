@@ -1,16 +1,21 @@
 "use client";
+
 import HeaderDeslogado from "@/components/headers/deslogado/page";
 import ProductCard from "@/components/ProductCard/page";
-import PartnerStore from "@/components/PartnerStore/page";
 import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; 
+import StoreCard from "@/components/StoreCard/page";
 
 export default function FeedPage() {
     const router = useRouter(); 
 
     const handleNavigateToLocation = () => {
         router.push("/localizacao"); 
+    };
+
+    const handleStoreClick = (storeName: string) => {
+        router.push(`/stores/${storeName.toLowerCase().replace(/\s+/g, "-")}`);
     };
 
     return (
@@ -41,7 +46,6 @@ export default function FeedPage() {
                         <p className="text-lg text-gray-700 mb-6 text-center">
                             Compartilhe sua localização para que possamos recomendar as melhores lojas da nossa feira para você comprar
                         </p>
-
                         <button
                             onClick={handleNavigateToLocation}
                             className="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300"
@@ -51,12 +55,10 @@ export default function FeedPage() {
                     </div>
                 </div>
             </section>
-
             <section className="py-10 border-t border-b border-gray-300">
                 <div className="text-center">
                     <h1 className="text-black text-2xl font-bold">Produtos Mais Pesquisados</h1>
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-10 mt-10">
                     <ProductCard imageSrc="/coco.png" altText="Coco Geladinho" productName="Coco Geladinho" />
                     <ProductCard imageSrc="/suco.png" altText="Suquinho de Laranja" productName="Suquinho de Laranja" />
@@ -66,14 +68,22 @@ export default function FeedPage() {
                 </div>
             </section>
             <section className="py-10 my-10">
-                <div className="text-center ">
+                <div className="text-center">
                     <h1 className="text-black text-2xl font-bold">Lojas Parceiras</h1>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-10 mt-10">
-                    <PartnerStore imageSrc="/loja1.png" altText="Loja 1" storeName="Loja 1" />
-                    <PartnerStore imageSrc="/loja2.png" altText="Loja 2" storeName="Loja 2" />
-                    <PartnerStore imageSrc="/loja3.png" altText="Loja 3" storeName="Loja 3" />
-                    <PartnerStore imageSrc="/loja4.png" altText="Loja 4" storeName="Loja 4" />
+                    <div onClick={() => handleStoreClick("Loja 1")} className="cursor-pointer">
+                        <StoreCard imageSrc="/loja1.png" altText="Loja 1" storeName="Loja 1" />
+                    </div>
+                    <div onClick={() => handleStoreClick("Loja 2")} className="cursor-pointer">
+                        <StoreCard imageSrc="/loja2.png" altText="Loja 2" storeName="Loja 2" />
+                    </div>
+                    <div onClick={() => handleStoreClick("Loja 3")} className="cursor-pointer">
+                        <StoreCard imageSrc="/loja3.png" altText="Loja 3" storeName="Loja 3" />
+                    </div>
+                    <div onClick={() => handleStoreClick("Loja 4")} className="cursor-pointer">
+                        <StoreCard imageSrc="/loja4.png" altText="Loja 4" storeName="Loja 4" />
+                    </div>
                 </div>
             </section>
             <Footer />
