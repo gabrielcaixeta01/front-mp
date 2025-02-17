@@ -69,10 +69,13 @@ export default function HeaderDeslogado() {
           <Menu size={35} />
         </button>
         <nav className="flex flex-col space-y-5">
-          <Link href="/" className="text-white hover:text-gray-300">
+          <Link 
+            href={role === "vendedor" ? "/vendedor" : "/cliente"} 
+            className="text-white hover:text-gray-300"
+          >
             Produtos comprados
           </Link>
-          <Link href="/lojas" className="text-white hover:text-gray-300">
+          <Link href="/stores" className="text-white hover:text-gray-300">
             Lojas parceiras
           </Link>
           <Link href="/localizacao" className="text-white hover:text-gray-300">
